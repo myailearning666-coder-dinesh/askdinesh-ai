@@ -8,7 +8,9 @@ app = FastAPI()
 # ✅ CORS FIX
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "https://askdinesh-ai-frontend.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -21,3 +23,4 @@ class Query(BaseModel):
 @app.post("/ask")
 def ask_agent(q: Query):
     return run_agent(q.question, q.module)
+
