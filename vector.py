@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_PATH = os.path.join(BASE_DIR, "data", "d365fo_modules_end_to_end_concepts.csv")
+CSV_PATH = os.path.join(BASE_DIR,"d365fo_modules_end_to_end_concepts.csv")
 
 df = pd.read_csv(CSV_PATH)
 
@@ -37,3 +37,4 @@ def simple_retrieve(question: str, module: str = "All", k: int = 5):
             break
 
     return results
+
